@@ -1,7 +1,12 @@
+@use "./assets/sass/variables" as *;
+
 .App {
   display: flex;
   height: 100vh;
   width: 100%;
+  background-color: $color-dark;
+  align-items: center;
+  justify-content: space-between;
   
 }
 
