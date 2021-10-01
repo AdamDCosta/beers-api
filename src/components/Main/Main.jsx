@@ -1,12 +1,17 @@
 import React from 'react';
 import "./Main.scss";
-import BeerTile from '../BeerTile/BeerTile';
+
+import BeerCardList from '../BeerCardList/BeerCardList';
 
 
 const Main = () => {
+  // needs to generate the beerTiles
+
+  
+
   return (
     <section className="main">
-      
+      <BeerCardList beer = { beers } />
     </section>
   )
 }

@@ -4,23 +4,23 @@ const BeerTile = (props) => {
 
   //img, title, description, abv, brewdate
 
-  const {beersArr} = props
+  const {beer} = props
   
   return (
     <article className="beer-tile">
       {/* do I need to add key here or when I iterate? */}
-      <img src={beersArr.image_url} alt={beersArr.name} />
+      <img src={beer.image_url} alt={beer.name} />
       <div className="beer-tile__heading">
-        <h2>{beersArr.name}</h2>
-        <p>{beersArr.tagline}</p>
+        <h2>{beer.name}</h2>
+        <p>{beer.tagline}</p>
       </div>
-      <p>{beersArr.description}</p>
+      <p>{beer.description}</p>
       <div className=".beer-tile__info">
         <h4>ABV:
-          <span>{beersArr.abv}%</span>
+          <span>{beer.abv}%</span>
         </h4>
         <h4>First Brewed 
-          <span>{beersArr.first_brewed}</span> 
+          <span>{beer.first_brewed}</span> 
         </h4>
       </div>
 
