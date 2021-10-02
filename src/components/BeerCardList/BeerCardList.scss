@@ -20,3 +20,13 @@
     align-items: center;
   }
 }
+
+@media screen and (min-width: $breakpoint-desktop){
+  
+  .beers {
+    grid-template-columns: 1fr 1fr;
+    
+  }
+
+  
+}
