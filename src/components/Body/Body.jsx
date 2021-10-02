@@ -2,13 +2,15 @@
 import React from 'react'
 import "./Body.scss";
 import Nav from "../Nav/Nav";
-import Main from "../Main/Main";
+
+import BeerCardList from '../BeerCardList/BeerCardList';
+import beers from '../../data/beers';
 
 const Body = () => {
   return (
     <body className="body">
       <Nav />
-      <Main />
+      <BeerCardList beersArr={beers} className="body__beers"/>
     </body>
   )
 }

@@ -1,19 +1,19 @@
-import React from 'react';
-import "./Main.scss";
+// import React from 'react';
+// import "./Main.scss";
 
-import BeerCardList from '../BeerCardList/BeerCardList';
+// import BeerCardList from '../BeerCardList/BeerCardList';
 
 
-const Main = () => {
-  // needs to generate the beerTiles
+// const Main = () => {
+//   // needs to generate the beerTiles
 
   
 
-  return (
-    <section className="main">
-      <BeerCardList beer = { beers } />
-    </section>
-  )
-}
+//   return (
+//     <section className="main">
+//       <BeerCardList beerArr = { beers } />
+//     </section>
+//   )
+// }
 
-export default Main
+// export default Main

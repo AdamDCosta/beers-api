@@ -1,1 +1,13 @@
 @use "../../assets/sass/variables" as *;
+
+.beers {
+  height: 90vh;
+  width: 70%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  background-color: $color-dark;
+  border: none;
+  border-radius: 20px;
+  margin: 0 10px 10px 0;
+}

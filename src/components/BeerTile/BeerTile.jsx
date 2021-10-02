@@ -1,4 +1,5 @@
 import React from 'react'
+import "./BeerTile.scss"
 
 const BeerTile = (props) => {
 
@@ -9,7 +10,7 @@ const BeerTile = (props) => {
   return (
     <article className="beer-tile">
       {/* do I need to add key here or when I iterate? */}
-      <img src={beer.image_url} alt={beer.name} />
+      <img className="beer-tile__image" src={beer.image_url} alt={beer.name} />
       <div className="beer-tile__heading">
         <h2>{beer.name}</h2>
         <p>{beer.tagline}</p>

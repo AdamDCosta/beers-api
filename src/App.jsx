@@ -1,9 +1,7 @@
 import './App.scss';
 
-import beers from "./data/beers";
+// import beers from "./data/beers";
 
-import Nav from './components/Nav/Nav';
-import Main from './components/Main/Main';
 import Header from './components/Header/Header';
 import Body from './components/Body/Body';
 
