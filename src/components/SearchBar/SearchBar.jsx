@@ -1,12 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./SearchBar.scss"
 
 const SearchBar = () => {
   return (
-    <div>
-      
-    </div>
+    <input type="text" className="search"/>
   )
 }
 
 export default SearchBar
+
