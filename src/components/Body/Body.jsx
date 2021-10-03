@@ -8,10 +8,10 @@ import beers from '../../data/beers';
 
 const Body = () => {
   return (
-    <body className="body">
+    <section className="body">
       <Nav />
       <BeerCardList beersArr={beers} className="body__beers"/>
-    </body>
+    </section>
   )
 }
 
