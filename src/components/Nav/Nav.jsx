@@ -2,24 +2,9 @@ import React from 'react'
 import "./Nav.scss"
 import SearchBar from '../SearchBar/SearchBar'
 
-const Nav = () => {
+const Nav = (props) => {
 
-  const { beers } = props
-
-  const [ search, setSearch] = useState("")
-
-  const handleSearch = (event) => {
-    searchInput = event.target.value;
-    setSearch(searchInput)
-    
-  }
-
-
-  const filteredBeersJSX =
-    search.length === 0 ? beers :
-    beers.filter(beer => {
-      beer.name.includes(search)
-    })
+  const { handleSearch, searchTerm } = props
 
   return (
     <nav className="nav">
