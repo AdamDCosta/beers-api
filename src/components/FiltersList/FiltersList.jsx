@@ -1,4 +1,5 @@
 import React from 'react'
+import HighABV from '../HighABV/HighABV'
 
 const FiltersList = () => {
 
@@ -6,7 +7,7 @@ const FiltersList = () => {
 
   return (
     <div className="filters-list">
-      
+      <HighABV />
     </div>
   )
 }
