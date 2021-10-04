@@ -1,7 +1,7 @@
 import React from 'react'
 import "./HighABV.scss"
 
-const HighABV = (props) => {
+const HighABV = () => {
 
   const {filterTitle, filterBox} = props
 
