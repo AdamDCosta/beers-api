@@ -3,7 +3,7 @@ import './App.scss';
 // import beers from "./data/beers";
 
 import Header from './components/Header/Header';
-import Body from './components/Body/Body';
+import Main from "./components/Main/Main";
 
 
 
@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Body />
+      <Main />
     </div>
   );
 }
