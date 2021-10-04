@@ -1,5 +1,6 @@
 import React from 'react'
 import HighABV from '../HighABV/HighABV'
+import ClassicRange from '../ClassicRange/ClassicRange'
 
 const FiltersList = () => {
 
@@ -8,6 +9,7 @@ const FiltersList = () => {
   return (
     <div className="filters-list">
       <HighABV />
+      <ClassicRange />
     </div>
   )
 }

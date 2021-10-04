@@ -1,0 +1,19 @@
+@use "../../assets/sass/variables" as *;
+
+.classic {
+  display: flex;
+  align-items: center;
+  font-family: $font-primary;
+  color: $color-secondary;
+  padding: 5px;
+
+  label {
+    padding-right: 5px;
+  }
+
+  input {
+    border: none;
+    background-color: $color-white;
+    
+  }
+}
