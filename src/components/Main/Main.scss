@@ -1,11 +1,23 @@
 @use "../../assets/sass/variables" as *;
+@use "../../assets/sass/mixins" as *;
 
 .main {
-  height: 70vh;
-  width: 70%;
-  display: grid;
-  background-color: $color-dark;
-  border: none;
-  border-radius: 20px;
-  margin: 0 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  
+  
+}
+
+@media screen and (min-width: $breakpoint-desktop){
+  
+  .main {
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  
 }

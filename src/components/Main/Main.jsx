@@ -1,19 +1,18 @@
-// import React from 'react';
-// import "./Main.scss";
 
-// import BeerCardList from '../BeerCardList/BeerCardList';
+import React from 'react'
+import "./Main.scss";
+import Nav from "../Nav/Nav";
 
+import BeerCardList from '../BeerCardList/BeerCardList';
+import beers from '../../data/beers';
 
-// const Main = () => {
-//   // needs to generate the beerTiles
+const Body = () => {
+  return (
+    <section className="body">
+      <Nav />
+      <BeerCardList beersArr={beers} className="body__beers"/>
+    </section>
+  )
+}
 
-  
-
-//   return (
-//     <section className="main">
-//       <BeerCardList beerArr = { beers } />
-//     </section>
-//   )
-// }
-
-// export default Main
+export default Body
