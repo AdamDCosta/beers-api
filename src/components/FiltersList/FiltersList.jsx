@@ -4,13 +4,13 @@ import HighABV from '../HighABV/HighABV'
 import ClassicRange from '../ClassicRange/ClassicRange'
 import Acidic from '../Acidic/Acidic'
 
-const FiltersList = () => {
+const FiltersList = (props) => {
 
-
+  const { handleABV } = props
 
   return (
     <div className="filters-list">
-      <HighABV />
+      <HighABV handleABV={handleABV}/>
       <ClassicRange />
       <Acidic />
 

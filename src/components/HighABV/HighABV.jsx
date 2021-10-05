@@ -1,15 +1,15 @@
 import React from 'react'
 import "./HighABV.scss"
 
-const HighABV = () => {
+const HighABV = (props) => {
 
-  // const {filterTitle, filterBox} = props
+  const {handleABV} = props
 
 
   return (
     <div className="abv">
     <label htmlFor="highABV">High ABV</label>
-    <input type="checkbox" name="HighABV" />
+    <input type="checkbox" name="HighABV" onChange={handleABV}/>
     </div>
   )
 }
