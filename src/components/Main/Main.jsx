@@ -12,11 +12,21 @@ const Main = () => {
 
   const [ searchTerm, setSearch] = useState("")
 
+  // const [ abvFilter, setABVFilter ] = useState(false)
+
   const handleSearch = (event) => {
     const searchInput = event.target.value.toLowerCase();
     setSearch(searchInput)
     
   }
+
+  // const handleAbv = () => {
+  //   !abvFilter ? beers :
+  //   beers.filter(beer => {
+  //     beer.abv > 6 ? beer : null 
+  //   })
+  // } 
+    
 
 
   const filteredBeersJSX =
@@ -29,7 +39,7 @@ const Main = () => {
 
   return (
     <section className="main">
-      <Nav handleSearch={handleSearch} searchTerm={searchTerm}/>
+      <Nav handleSearch={handleSearch} searchTerm={searchTerm} />
       <BeerCardList beersArr={filteredBeersJSX} className="main__beers"/>
     </section>
   )
