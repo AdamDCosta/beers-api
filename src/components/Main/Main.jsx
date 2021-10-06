@@ -8,17 +8,19 @@ import BeerCardList from '../BeerCardList/BeerCardList';
 
 const Main = (props) => {
 
-  const { beers } = props
+  const { beers, handleSearch, handleABV, searchTerm } = props
 
-  const [ searchTerm, setSearch] = useState("")
+  // const [ searchTerm, setSearch] = useState("")
 
   // const [ abvFilter, setABVFilter ] = useState(false)
 
-  const handleSearch = (event) => {
-    const searchInput = event.target.value.toLowerCase();
-    setSearch(searchInput)
+  // const handleSearch = (event) => {
+  //   const searchInput = event.target.value.toLowerCase();
+  //   const searchName = searchInput.split(" ").join("_")
+  //   console.log(searchName)
+  //   setSearch(searchInput)
     
-  }
+  // }
 
   // const handleAbv = () => {
   //   !abvFilter ? beers :
@@ -29,18 +31,18 @@ const Main = (props) => {
     
 
 
-  const filteredBeersJSX =
-    searchTerm.length === 0 ? beers :
-    beers.filter(beer => {
-      const lowerBeer = beer.name.toLowerCase()
-      return lowerBeer.includes(searchTerm)
-    })
+  // const filteredBeersJSX =
+  //   searchTerm.length === 0 ? beers :
+  //   beers.filter(beer => {
+  //     const lowerBeer = beer.name.toLowerCase()
+  //     return lowerBeer.includes(searchTerm)
+  //   })
 
 
   return (
     <section className="main">
-      <Nav handleSearch={handleSearch} searchTerm={searchTerm} />
-      <BeerCardList beersArr={filteredBeersJSX} className="main__beers"/>
+      <Nav handleSearch={handleSearch} searchTerm={searchTerm} handleABV={handleABV}/>
+      <BeerCardList beersArr={beers} className="main__beers"/>
     </section>
   )
 }
