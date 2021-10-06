@@ -1,4 +1,5 @@
 import './App.scss';
+import React, { useState, useEffect } from 'react';
 
 // import beers from "./data/beers";
 
@@ -9,20 +10,29 @@ import Main from "./components/Main/Main";
 
 const App = () => {
 
-  // const [ beers, setBeers ] = useState([])
+  const [ beers, setBeers ] = useState([])
 
-  fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80")
-  .then(response => {
-    return response.json()
-  })
-  .then(beersObj => {
-    console.log(beersObj)
-  })
+  useEffect(() => {
+    
+    fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80")
+    .then(response => {
+      return response.json()
+    })
+    .then(beersArray => {
+      console.log(beersArray)
+        if (beersArray) {
+          setBeers(beersArray) 
+          } else {
+            setBeers([])
+          }
+        })  
+  }, [])
+
 
   return (
     <div className="App">
       <Header />
-      <Main />
+      <Main beers={beers}/>
     </div>
   );
 }

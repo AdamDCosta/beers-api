@@ -4,11 +4,11 @@ import "./Main.scss";
 import Nav from "../Nav/Nav";
 
 import BeerCardList from '../BeerCardList/BeerCardList';
-import beers from '../../data/beers';
+// import beers from '../../data/beers';
 
-const Main = () => {
+const Main = (props) => {
 
-  // const { beers } = props
+  const { beers } = props
 
   const [ searchTerm, setSearch] = useState("")
 
