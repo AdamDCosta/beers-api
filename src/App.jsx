@@ -16,6 +16,8 @@ const App = () => {
 
   const [ highABV, setHighABV ] = useState("false")
 
+  
+
   useEffect(() => {
     
     fetch(`https://api.punkapi.com/v2/beers/?page=1&per_page=80${searchTerm}`)
@@ -30,7 +32,9 @@ const App = () => {
             setBeers([])
           }
         })  
-  }, [searchTerm])
+  }, [searchTerm, ])
+
+  
 
   const handleSearch = (event) => {
     const searchInput = event.target.value.toLowerCase();
@@ -40,10 +44,12 @@ const App = () => {
   }
 
   const handleABV = () => {
+    setHighABV(!highABV)
     
-    const abvFilter = highABV ? `abv_gt=5` : "";
-
   }
+  
+  const abvFilter = highABV ? `&abv_gt=6` : "";
+  
 
 
   // const filteredBeersJSX =
