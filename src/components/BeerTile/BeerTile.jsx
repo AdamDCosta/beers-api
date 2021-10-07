@@ -1,5 +1,6 @@
 import React from 'react'
 import "./BeerTile.scss"
+import InfoButton from '../InfoButton/InfoButton'
 
 const BeerTile = (props) => {
 
@@ -8,6 +9,7 @@ const BeerTile = (props) => {
   const {beer} = props
 
   const beerDesc = () => {
+
     if (beer.description.length < 200) {
       return beer.description
     } else {
@@ -32,14 +34,16 @@ const BeerTile = (props) => {
         </div>
         <p>{beerDesc()}</p>
         <div className=".beer-tile__right--info">
-        <h4>ABV:
-          <span> {beer.abv}%</span>
-        </h4>
-        <h4>First Brewed: 
-          <span> {beer.first_brewed}</span> 
-        </h4>
-      </div>
-
+          <h4>ABV:
+            <span> {beer.abv}%</span>
+          </h4>
+          <h4>First Brewed: 
+            <span> {beer.first_brewed}</span> 
+          </h4>
+        </div> 
+        <div className=".beer-tile__right--button">
+          <InfoButton />
+        </div>
       </div>
 
     </article>

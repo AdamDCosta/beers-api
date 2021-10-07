@@ -1,0 +1,14 @@
+@use "../../assets/sass/variables" as *;
+
+.info-button {
+  background-color: $color-secondary;
+  color: $color-darker;
+  border-radius: 20px;
+  padding: 5px 10px;
+  border: none;
+}
+
+.info-button:hover {
+  background-color: $color-darker;
+  color: $color-secondary;
+}
