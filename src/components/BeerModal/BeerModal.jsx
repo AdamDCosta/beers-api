@@ -5,7 +5,7 @@ const BeerModal = (props) => {
 
   const {beer} = props
 
-  
+   
 
 
   return (

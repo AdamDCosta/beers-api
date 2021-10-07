@@ -1,11 +1,12 @@
 import './App.scss';
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 // import beers from "./data/beers";
 
 import Header from './components/Header/Header';
 import Main from "./components/Main/Main";
-
+import BeerModal from './components/BeerModal/BeerModal';
 
 
 const App = () => {
@@ -74,12 +75,21 @@ const App = () => {
 
 
   return (
-    <div className="App">
-      <Header />
-      <Main beers={beers} handleSearch={handleSearch} searchTerm={searchTerm} handleABV={handleABV} handleClassic={handleClassic} handleAcidity={handleAcidity}/>
-    </div>
-  );
+    <Router>
+      <div className="App">
+        <Header />
+        <Main beers={beers} handleSearch={handleSearch} searchTerm={searchTerm} handleABV={handleABV} handleClassic={handleClassic} handleAcidity={handleAcidity}/>
+        <Switch>
 
+          <Route path="/:beerId">
+            <BeerModal beers={beers}/>
+          </Route>
+       </Switch>
+      </div>
+
+    </Router>
+
+  );
 }
 export default App;
 

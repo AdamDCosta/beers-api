@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./BeerTile.scss"
 import InfoButton from '../InfoButton/InfoButton'
 
@@ -8,12 +8,14 @@ const BeerTile = (props) => {
 
   const {beer} = props
 
+  
+
   const beerDesc = () => {
 
-    if (beer.description.length < 200) {
+    if (beer.description.length < 150) {
       return beer.description
     } else {
-      const lastSentenceIndex = beer.description.indexOf(".", 200) + 1
+      const lastSentenceIndex = beer.description.indexOf(".", 150) + 1
       const shortenedText = beer.description.substring(0, lastSentenceIndex);
       return shortenedText + ".."
     }
@@ -34,16 +36,18 @@ const BeerTile = (props) => {
         </div>
         <p>{beerDesc()}</p>
         <div className=".beer-tile__right--info">
-          <h4>ABV:
-            <span> {beer.abv}%</span>
-          </h4>
-          <h4>First Brewed: 
-            <span> {beer.first_brewed}</span> 
-          </h4>
+          <div className=".beer-tile__right--info--stats">
+            <h4>ABV:
+              <span> {beer.abv}%</span>
+            </h4>
+            <h4>First Brewed: 
+              <span> {beer.first_brewed}</span> 
+            </h4>
+          </div>
         </div> 
-        <div className=".beer-tile__right--button">
-          <InfoButton />
-        </div>
+          <span className=".beer-tile__right--info--button">
+            <InfoButton />
+          </span>
       </div>
 
     </article>

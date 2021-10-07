@@ -6,9 +6,16 @@ import Nav from "../Nav/Nav";
 import BeerCardList from '../BeerCardList/BeerCardList';
 // import beers from '../../data/beers';
 
+
 const Main = (props) => {
 
   const { beers, handleSearch, handleABV, searchTerm, handleClassic,    handleAcidity } = props
+
+  // const [ showModal, setShowModal ] = useState(false);
+
+  // // const toggleModal = () => {
+  // //   setShowModal(!showModal);
+  // };
 
   // const [ searchTerm, setSearch] = useState("")
 
@@ -50,6 +57,7 @@ const Main = (props) => {
 
       <BeerCardList beersArr={beers} className="main__beers"/>
     </section>
+
   )
 }
 
