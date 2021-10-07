@@ -8,7 +8,7 @@ import BeerCardList from '../BeerCardList/BeerCardList';
 
 const Main = (props) => {
 
-  const { beers, handleSearch, handleABV, searchTerm } = props
+  const { beers, handleSearch, handleABV, searchTerm, handleClassic,    handleAcidity } = props
 
   // const [ searchTerm, setSearch] = useState("")
 
@@ -41,7 +41,13 @@ const Main = (props) => {
 
   return (
     <section className="main">
-      <Nav handleSearch={handleSearch} searchTerm={searchTerm} handleABV={handleABV}/>
+      <Nav 
+      handleSearch={handleSearch} 
+      searchTerm={searchTerm} 
+      handleABV={handleABV} 
+      handleClassic={handleClassic} 
+      handleAcidity={handleAcidity}/>
+
       <BeerCardList beersArr={beers} className="main__beers"/>
     </section>
   )

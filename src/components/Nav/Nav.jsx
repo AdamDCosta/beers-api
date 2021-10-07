@@ -5,13 +5,13 @@ import FiltersList from '../FiltersList/FiltersList'
 
 const Nav = (props) => {
 
-  const { handleSearch, searchTerm, handleABV } = props
+  const { handleSearch, searchTerm, handleABV, handleClassic, handleAcidity } = props
 
   return (
     <nav className="nav">
       <h3 className="nav__heading">Search & Filter</h3>
       <SearchBar seachTerm={searchTerm} handleSearch = {handleSearch}/>
-      <FiltersList handleABV={handleABV}/>
+      <FiltersList handleABV={handleABV} handleClassic={handleClassic} handleAcidity={handleAcidity}/>
     </nav>
   )
 }

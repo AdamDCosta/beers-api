@@ -14,13 +14,15 @@ const App = () => {
 
   const [ searchTerm, setSearchTerm ] = useState("")
 
-  const [ highABV, setHighABV ] = useState("false")
+  const [ highABV, setHighABV ] = useState(false)
 
-  
+  const [ isClassic, setIsClassic ] = useState(false)
+
+  const [ isAcidic, setIsAcidic ] = useState(false)
 
   useEffect(() => {
     
-    fetch(`https://api.punkapi.com/v2/beers/?page=1&per_page=80${searchTerm}`)
+    fetch(`https://api.punkapi.com/v2/beers/?page=1&per_page=80${searchTerm}${abvFilter}${classicFilter}${acidicFilter}`)
     .then(response => {
       return response.json()
     })
@@ -32,9 +34,9 @@ const App = () => {
             setBeers([])
           }
         })  
-  }, [searchTerm, ])
+  }, [searchTerm, highABV, isClassic, isAcidic])
 
-  
+  // --- Search Function
 
   const handleSearch = (event) => {
     const searchInput = event.target.value.toLowerCase();
@@ -43,27 +45,38 @@ const App = () => {
     setSearchTerm(nameSearch)
   }
 
+
+  // --- High ABV filter
+
   const handleABV = () => {
     setHighABV(!highABV)
-    
   }
   
   const abvFilter = highABV ? `&abv_gt=6` : "";
   
 
+  // ---Classic Range filter
 
-  // const filteredBeersJSX =
-  //   searchTerm.length === 0 ? beers :
-  //   beers.filter(beer => {
-  //     const lowerBeer = beer.name.toLowerCase()
-  //     return lowerBeer.includes(searchTerm)
-  //   })
+  const handleClassic = () => {
+    setIsClassic(!isClassic)
+  }
+
+  const classicFilter = isClassic ? `&brewed_before=01-2010` : "";
+
+  
+  // ---High acidity filter
+
+  const handleAcidity = () => {
+    setIsAcidic(!isAcidic)
+  }
+
+  const acidicFilter = isAcidic ? `&filter=lessThan(%4ph` : "";
 
 
   return (
     <div className="App">
       <Header />
-      <Main beers={beers} handleSearch={handleSearch} searchTerm={searchTerm} handleABV={handleABV}/>
+      <Main beers={beers} handleSearch={handleSearch} searchTerm={searchTerm} handleABV={handleABV} handleClassic={handleClassic} handleAcidity={handleAcidity}/>
     </div>
   );
 

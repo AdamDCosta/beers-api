@@ -6,13 +6,13 @@ import Acidic from '../Acidic/Acidic'
 
 const FiltersList = (props) => {
 
-  const { handleABV } = props
+  const { handleABV, handleClassic, handleAcidity } = props
 
   return (
     <div className="filters-list">
       <HighABV handleABV={handleABV}/>
-      <ClassicRange />
-      <Acidic />
+      <ClassicRange handleClassic={handleClassic}/>
+      <Acidic handleAcidity={handleAcidity}/>
 
     </div>
   )
