@@ -6,6 +6,17 @@ const BeerTile = (props) => {
   //img, title, description, abv, brewdate
 
   const {beer} = props
+
+  const beerDesc = () => {
+    if (beer.description.length < 200) {
+      return beer.description
+    } else {
+      const lastSentenceIndex = beer.description.indexOf(".", 200) + 1
+      const shortenedText = beer.description.substring(0, lastSentenceIndex);
+      return shortenedText + ".."
+    }
+  }
+  
   
   return (
     <article className="beer-tile">
@@ -14,10 +25,12 @@ const BeerTile = (props) => {
       </div>
       <div className="beer-tile__right">
         <div className="beer-tile__right--heading">
-          <h2>{beer.name.toUpperCase()}</h2>
+          <h2 className="beer-tile__right--name">
+            {beer.name.toUpperCase()}
+          </h2>
           <h4>{beer.tagline}</h4>
         </div>
-        <p>{beer.description}</p>
+        <p>{beerDesc()}</p>
         <div className=".beer-tile__right--info">
         <h4>ABV:
           <span> {beer.abv}%</span>
