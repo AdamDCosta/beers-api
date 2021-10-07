@@ -28,7 +28,7 @@ const App = () => {
       return response.json()
     })
     .then(beersArray => {
-      console.log(beersArray)
+      
         if (beersArray) {
           setBeers(beersArray) 
           } else {
@@ -73,13 +73,17 @@ const App = () => {
 
   const acidicFilter = isAcidic ? `&filter=lessThan(%4ph` : "";
 
+  
 
   return (
     <Router>
       <div className="App">
-        <Header />
-        <Main beers={beers} handleSearch={handleSearch} searchTerm={searchTerm} handleABV={handleABV} handleClassic={handleClassic} handleAcidity={handleAcidity}/>
         <Switch>
+          <Route exact path="/">
+            <Header />
+
+            <Main beers={beers} handleSearch={handleSearch} searchTerm={searchTerm} handleABV={handleABV} handleClassic={handleClassic} handleAcidity={handleAcidity}/>
+          </Route>
 
           <Route path="/:beerId">
             <BeerModal beers={beers}/>

@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./BeerTile.scss"
 import InfoButton from '../InfoButton/InfoButton'
+import { Link } from "react-router-dom";
 
 const BeerTile = (props) => {
 
@@ -45,9 +46,11 @@ const BeerTile = (props) => {
             </h4>
           </div>
         </div> 
+        <Link to={`/${beer.id}`}>
           <span className=".beer-tile__right--info--button">
             <InfoButton />
           </span>
+        </Link>
       </div>
 
     </article>

@@ -1,49 +1,63 @@
 import React from 'react'
 import "./BeerModal.scss"
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import whiteCross from "../../assets/images/white-cross.png"
+
 
 const BeerModal = (props) => {
 
-  const {beer} = props
+  const { beers } = props;
 
-   
+  const { beerId } = useParams();
+
+  const idArray = beers.filter(beer => {
+    return beer.id == beerId
+  })  
+  const idObj = idArray[0]
+
+  console.log(idObj)
 
 
   return (
     <article className="beer-modal">
+      <Link to="/">
+        <img src={whiteCross} alt="close window"/>
+      </Link>
       <div className="beer-modal__top">
-        <img className="beer-modal__top--image" src={beer.image_url} alt={beer.name} />
+        <div className="beer-modal__top--heading">
+          <h2 className="beer-modal__top--name">
+            {idObj.name}
+          </h2>
+          <h4>{idObj.tagline}</h4>
+        </div>
+        <img className="beer-modal__top--image" src={idObj.image_url} alt={idObj.name} />
       </div>
       <div className="beer-modal__lower">
-        <div className="beer-modal__lower--heading">
-          <h2 className="beer-modal__lower--name">
-            {beer.name.toUpperCase()}
-          </h2>
-          <h4>{beer.tagline}</h4>
-        </div>
-        <p>{beer.description}</p>
+        <p>{idObj.description}</p>
         <div className=".beer-modal__lower--info">
         <h4>ABV:
-          <span> {beer.abv}%</span>
+          <span> {idObj.abv}%</span>
         </h4>
         <h4>IBU:
-          <span> {beer.ibu}</span>
+          <span> {idObj.ibu}</span>
         </h4>
         <h4>EBC:
-          <span> {beer.ebc}</span>
+          <span> {idObj.ebc}</span>
         </h4>
 
         <h2>Food Pairings</h2>
           <ul className=".beer-modal__lower--pairings">
-            <li>{beer.food_pairing[0]}</li>
-            <li>{beer.food_pairing[1]}</li>
-            <li>{beer.food_pairing[2]}</li>
+            <li>{idObj.food_pairing[0]}</li>
+            <li>{idObj.food_pairing[1]}</li>
+            <li>{idObj.food_pairing[2]}</li>
           </ul>
         <h4>First Brewed: 
-          <span> {beer.first_brewed}</span> 
+          <span> {idObj.first_brewed}</span> 
         </h4>
-      </div>
+      </div> 
 
-      </div>
+       </div>
 
     </article>
   )
