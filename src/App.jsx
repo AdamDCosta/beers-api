@@ -23,7 +23,7 @@ const App = () => {
 
   useEffect(() => {
     
-    fetch(`https://api.punkapi.com/v2/beers/?page=1&per_page=80${searchTerm}${abvFilter}${classicFilter}${acidicFilter}`)
+    fetch(`https://api.punkapi.com/v2/beers/?page=1&per_page=80${searchTerm}${abvFilter}${classicFilter}`)
     .then(response => {
       return response.json()
     })
@@ -35,7 +35,7 @@ const App = () => {
             setBeers([])
           }
         })  
-  }, [searchTerm, highABV, isClassic, isAcidic])
+  }, [searchTerm, highABV, isClassic])
 
   // --- Search Function
 
@@ -71,9 +71,16 @@ const App = () => {
     setIsAcidic(!isAcidic)
   }
 
-  const acidicFilter = isAcidic ? `&filter=lessThan(%4ph` : "";
-
+  const acidicFilterJSX = isAcidic ?  
+    beers.filter(beer => {
+      const acidicBeer = beer.ph < 4
+      return acidicBeer 
+    })
+      : beers;
   
+  
+
+
 
   return (
     <Router>
@@ -82,7 +89,7 @@ const App = () => {
           <Route exact path="/">
             <Header />
 
-            <Main beers={beers} handleSearch={handleSearch} searchTerm={searchTerm} handleABV={handleABV} handleClassic={handleClassic} handleAcidity={handleAcidity}/>
+            <Main beers={acidicFilterJSX} handleSearch={handleSearch} searchTerm={searchTerm} handleABV={handleABV} handleClassic={handleClassic} handleAcidity={handleAcidity}/>
           </Route>
 
           <Route path="/:beerId">
