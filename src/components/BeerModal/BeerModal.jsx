@@ -21,33 +21,40 @@ const BeerModal = (props) => {
 
   return (
     <article className="beer-modal">
-      <Link to="/">
-        <img src={whiteCross} alt="close window"/>
-      </Link>
-      <div className="beer-modal__top">
-        <div className="beer-modal__top--heading">
-          <h2 className="beer-modal__top--name">
-            {idObj.name}
-          </h2>
-          <h4>{idObj.tagline}</h4>
-        </div>
-        <img className="beer-modal__top--image" src={idObj.image_url} alt={idObj.name} />
-      </div>
-      <div className="beer-modal__lower">
-        <p>{idObj.description}</p>
-        <div className=".beer-modal__lower--info">
-        <h4>ABV:
-          <span> {idObj.abv}%</span>
-        </h4>
-        <h4>IBU:
-          <span> {idObj.ibu}</span>
-        </h4>
-        <h4>EBC:
-          <span> {idObj.ebc}</span>
-        </h4>
 
-        <h2>Food Pairings</h2>
-          <ul className=".beer-modal__lower--pairings">
+      <Link to="/">
+        <img className="beer-modal__close" src={whiteCross} alt="close window"/>
+      </Link>
+        
+        <img className="beer-modal__image" src={idObj.image_url} alt={idObj.name} />
+        
+      
+        <div className="beer-modal__heading">
+          <h2 className="beer-modal__heading--name">
+            {idObj.name.toUpperCase()}
+          </h2>
+          <h4 className="beer-modal__heading--tag">
+            {`"${idObj.tagline}"`}
+          </h4>
+        </div>
+
+      
+      
+        <p>{idObj.description}</p>
+        <div className="beer-modal__info">
+          <h4>ABV:
+            <span> {idObj.abv}%</span>
+          </h4>
+          <h4>IBU:
+            <span> {idObj.ibu}</span>
+          </h4>
+          <h4>EBC:
+            <span> {idObj.ebc}</span>
+          </h4>
+        </div>
+
+        <h2>Great to drink with...</h2>
+          <ul className="beer-modal__pairings">
             <li>{idObj.food_pairing[0]}</li>
             <li>{idObj.food_pairing[1]}</li>
             <li>{idObj.food_pairing[2]}</li>
@@ -55,9 +62,8 @@ const BeerModal = (props) => {
         <h4>First Brewed: 
           <span> {idObj.first_brewed}</span> 
         </h4>
-      </div> 
+      
 
-       </div>
 
     </article>
   )

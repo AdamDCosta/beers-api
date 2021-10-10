@@ -35,7 +35,7 @@ const BeerTile = (props) => {
           </h2>
           <h4>{beer.tagline}</h4>
         </div>
-        <p>{beerDesc()}</p>
+        <p className="beer-tile__right--desc">{beerDesc()}</p>
         <div className=".beer-tile__right--info">
           <div className=".beer-tile__right--info--stats">
             <h4>ABV:
