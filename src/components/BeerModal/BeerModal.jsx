@@ -17,7 +17,6 @@ const BeerModal = (props) => {
   })  
   const idObj = idArray[0]
 
-  console.log(idObj)
 
   const maltsList = idObj.ingredients.malt.map(mlt => {
     const maltItem =  <li>{mlt.name}: {mlt.amount.value}kg</li>
