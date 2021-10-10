@@ -5,7 +5,7 @@
   background-color: $color-darker;
   color: $color-white;
   height: 15vh;
-  width: 95%;
+  width: 100%;
   border: none;
   display: flex;
   align-items: center;
@@ -13,5 +13,6 @@
 
   &__logo {
     max-height: 90%;
+    padding-left: 5%;
   }
 }
