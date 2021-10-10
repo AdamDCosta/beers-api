@@ -33,11 +33,11 @@ const BeerTile = (props) => {
           <h2 className="beer-tile__right--name">
             {beer.name.toUpperCase()}
           </h2>
-          <h4>{beer.tagline}</h4>
+          <h4 className="beer-tile__right--tag">{`"${beer.tagline}"`}</h4>
         </div>
         <p className="beer-tile__right--desc">{beerDesc()}</p>
-        <div className=".beer-tile__right--info">
-          <div className=".beer-tile__right--info--stats">
+        <div className="beer-tile__right--info">
+          <div className="beer-tile__right--info-stats">
             <h4>ABV:
               <span> {beer.abv}%</span>
             </h4>
@@ -46,11 +46,11 @@ const BeerTile = (props) => {
             </h4>
           </div>
         </div> 
-        <Link to={`/${beer.id}`}>
-          <span className=".beer-tile__right--info--button">
-            <InfoButton />
-          </span>
-        </Link>
+          <Link to={`/${beer.id}`}>
+            <span className="beer-tile__right--info-button">
+              <InfoButton />
+            </span>
+          </Link>
       </div>
 
     </article>

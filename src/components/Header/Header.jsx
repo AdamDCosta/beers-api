@@ -6,9 +6,12 @@ const Header = () => {
   return (
     <header className="header">
       <img src={Logo} alt="brewdog-logo" className="header__logo"/>
-      <h1>Punk API</h1>
-      <br />
-      <h2>The Brewdog back catalogue</h2>
+      <div className="header__title">
+        <h1>PUNK API</h1>
+      
+        <h2>The Brewdog back catalogue</h2>
+
+      </div>
     </header>
   )
 }

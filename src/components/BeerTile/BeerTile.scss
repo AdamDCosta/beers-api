@@ -3,15 +3,15 @@
 .beer-tile {
   display: flex;
   align-items: center;
-  background-color: $color-primary;
+  // background-color: $color-primary;
   height: 60vh;
   // border: 1px solid $color-secondary;
-  border-radius: 20px;
+  // border-radius: 20px;
   color: $color-white;
   width: 100%;
   padding: 5px;
   position: relative;
-
+  border-top: 1px solid $color-white;
   
 
   &__left {
@@ -48,18 +48,61 @@
 
     &--name {
       color: $color-secondary;
+      font-size: 0.9rem;
+    }
+
+    &--tag {
+      font-style: italic;
+      font-size: 0.9rem;
     }
 
     &--info {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      position: relative;
+
+    }
+    &--info-stats {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      height: 100px;
+
     }    
-  }
+    
 
 }
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+
+  .beer-tile {
+
+    &__right--name {
+      
+      font-size: 1.2rem;
+    }
+
+    &__right--tag {
+      
+      font-size: 1.2rem;
+    }
+
+    &__right--desc {
+      font-size: 1.2rem;
+    }
+
+    &__right--info-button {
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+    }
+  }
 
 
+}
 
 
 
