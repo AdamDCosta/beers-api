@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const BeerTile = (props) => {
 
-  //img, title, description, abv, brewdate
 
   const {beer} = props
 
