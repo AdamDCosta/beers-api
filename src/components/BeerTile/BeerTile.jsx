@@ -45,7 +45,7 @@ const BeerTile = (props) => {
             </h4>
           </div>
         </div> 
-          <Link to={`/${beer.id}`}>
+          <Link to={`/beers-api/${beer.id}`}>
             <span className="beer-tile__right--info-button">
               <InfoButton />
             </span>

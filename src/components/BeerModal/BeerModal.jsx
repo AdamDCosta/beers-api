@@ -15,7 +15,8 @@ const BeerModal = (props) => {
   const idArray = beers.filter(beer => {
     return beer.id == beerId
   })  
-  const idObj = idArray[0]
+  const idObj = idArray[0] || {ingredients: {malt:[], hops:[]}}
+
 
 
   const maltsList = idObj.ingredients.malt.map(mlt => {
@@ -35,7 +36,7 @@ const BeerModal = (props) => {
 
       <Header />
 
-      <Link to="/">
+      <Link to="/beers-api/">
         <img className="beer-modal__close" src={whiteCross} alt="close window"/>
       </Link>
         
@@ -106,7 +107,7 @@ const BeerModal = (props) => {
         </article>
       
 
-    <Link to="/">
+    <Link to="/beers-api/">
       <footer className="beer-modal__footer">
         <img src={whiteBanner} alt="brewdog footer" />
       </footer>

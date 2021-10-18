@@ -86,13 +86,13 @@ const App = () => {
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/beers-api/">
             <Header />
 
             <Main beers={acidicFilterJSX} handleSearch={handleSearch} searchTerm={searchTerm} handleABV={handleABV} handleClassic={handleClassic} handleAcidity={handleAcidity}/>
           </Route>
 
-          <Route path="/:beerId">
+          <Route path="/beers-api/:beerId">
             <BeerModal beers={beers}/>
           </Route>
        </Switch>

@@ -1,6 +1,6 @@
 {
   "name": "beers-api",
-  "homepage":"http://AdamDCosta.github.io/beers-api",
+  "homepage":"https://adamdcosta.github.io/beers-api/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
