@@ -17,7 +17,20 @@ This project was set during week 7 of the full-time *_nology* course. The requir
 ## What I learned
 
 - useEffect. Used with the fetch with the search and filter states as the dependency arrays.
-- Routing
-- useParams
+- Routing. Used to link from the main list of beers to an individual beer page.
+- useParams. Used the beer Id from the fetch response as the param to link to each individual page.
+- useState. To pass the fetch response through the app.
+- props. To create re-usable components, passing data objects, functions and state.
+
+****
+
+## Tech Stack
+
+- React
+- Javascript
+- HTML
+- SCSS
+
+
 
 
