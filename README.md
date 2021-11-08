@@ -12,4 +12,12 @@ This project was set during week 7 of the full-time *_nology* course. The requir
 
 ![Beers API routing to an individual beer](https://github.com/AdamDCosta/beers-api/blob/main/src/assets/images/beer-api-routing-2.JPG)
 
+****
+
+## What I learned
+
+- useEffect. Used with the fetch with the search and filter states as the dependency arrays.
+- Routing
+- useParams
+
 
