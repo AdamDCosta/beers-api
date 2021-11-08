@@ -1,6 +1,6 @@
 # Beers API
 
-A web app using the Brewdog Punk API builf in React.
+A web app using the Brewdog Punk API built in React.
 
 ![Beers API search function](https://github.com/AdamDCosta/beers-api/blob/main/src/assets/images/Beer-api-search.JPG)
 
